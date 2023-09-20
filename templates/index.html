@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Index - Web Scraper</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+    <style>
+        #mh h1 {
+            font-family: "Caveat", sans-serif;
+        }
+    </style>
+</head>
+
+<body style="background-image: url({% static 'bg.jpg' %});background-position: center;background-size:cover;">
+    <div class="container text-center mt-5 p-5" style="color:white;">
+        <div class="mt-5 p-5 rounded mb-5" id="mh" style="background-color:rgba(0,0,0,0.3);">
+            <h1 class="display-1"> Wanna Scrap the WEB!?</h1>
+
+
+
+            <div class="container">
+                <form action="{% url 'result' %}" method="post" name="form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="h4">Enter the url here : </label>
+                        <input name="scrapsrc" type="url" class="form-control" placeholder="" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Scrap now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src=""></script>
+</body>
+
+</html>
